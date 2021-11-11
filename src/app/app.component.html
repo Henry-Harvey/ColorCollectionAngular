@@ -1,0 +1,54 @@
+<div style="text-align: center">
+  <h1>Colors</h1>
+</div>
+
+<div class="list-group" style="text-align: center">
+  <table align="center">
+    <tr>
+      <th>Name</th>
+      <th>Hex</th>
+      <th>Timestamp</th>
+    </tr>
+    <tr
+      *ngFor="let color of colors"
+      [ngStyle]="{ 'background-color': color.hex }"
+    >
+      <td>
+        <button class="list-group-item" active (click)="selectColor(color)">
+          {{ color.name }}
+        </button>
+      </td>
+      <td>{{ color.hex }}</td>
+      <td>{{ color.timestamp }}</td>
+    </tr>
+    <tr>
+      <td>
+        <button
+          class="list-group-item"
+          active
+          (click)="toggleAddColor()"
+          style="text-align: center"
+        >
+          Add
+        </button>
+      </td>
+      <td>#______</td>
+      <td>0123456789ABCDEF</td>
+    </tr>
+  </table>
+</div>
+
+<app-display-color
+  *ngIf="selectedColor"
+  [color]="selectedColor"
+  [retrieveAllColors]="retrieveAllColors"
+  [clearColor]="clearColor"
+></app-display-color>
+
+<app-add-color
+  *ngIf="isAddColorOpen"
+  [retrieveAllColors]="retrieveAllColors"
+  [toggleAddColor]="toggleAddColor"
+></app-add-color>
+
+<router-outlet></router-outlet>
