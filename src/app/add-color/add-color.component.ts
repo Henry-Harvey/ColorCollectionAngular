@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ColorService } from '../service/color-service';
-
+/*
+ * This component presents a form for adding a new color to the list
+ */
 @Component({
   selector: 'app-add-color',
   templateUrl: './add-color.component.html',

@@ -1,6 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ColorService } from '../service/color-service';
 
+/*
+ * This component presents the information of a color and allows a user to edit or delete the color
+ */
 @Component({
   selector: 'app-display-color',
   templateUrl: './display-color.component.html',

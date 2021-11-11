@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ColorService } from './service/color-service';
 
+/*
+ * This component gethers all of the colors so that they can be displayed. They are shown in a table.
+ */
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
